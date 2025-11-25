@@ -9,7 +9,7 @@ public class HistoireTP4 {
 	
 	public static void main(String[] args) {
 		HistoireTP4 h=new HistoireTP4();
-		h.scenario4();
+		h.scenario5();
 	}
 	
 	public void scenario1() {
@@ -40,5 +40,11 @@ public class HistoireTP4 {
 		Ronin roro=new Ronin("Roro", "shochu", 60);
 		roro.direBonjour();
 		roro.donner(marco);
+	}
+	
+	public void scenario5() {
+		Yakuza yaku=new Yakuza("Yaku Le Noir", "whisky", 45, "Warsong");
+		Ronin roro=new Ronin("Roro", "shochu", 54);
+		roro.provoquer(yaku);
 	}
 }
