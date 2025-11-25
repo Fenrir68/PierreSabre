@@ -3,12 +3,11 @@ package personnages;
 public class Yakuza extends Humain{
 
 	private String clan;
-	private int honneur;
+	private int honneur=0;
 	
 	public Yakuza(String nom, String favBoisson, int argent, String clan) {
 		super(nom, favBoisson, argent);
 		this.clan=clan;
-		this.honneur=0;
 	}
 	
 	public void extorquer(Commercant victime) {
