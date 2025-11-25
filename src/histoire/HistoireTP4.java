@@ -2,12 +2,13 @@ package histoire;
 
 import personnages.Commercant;
 import personnages.Humain;
+import personnages.Yakuza;
 
 public class HistoireTP4 {
 	
 	public static void main(String[] args) {
 		HistoireTP4 h=new HistoireTP4();
-		h.scenario2();
+		h.scenario3();
 	}
 	
 	public void scenario1() {
@@ -25,5 +26,11 @@ public class HistoireTP4 {
 		marco.seFaireExtorquer();
 		marco.recevoir(15);
 		marco.boire();
+	}
+	
+	public void scenario3() {
+		Commercant marco=new Commercant("Marco", 15);
+		Yakuza yaku=new Yakuza("Yaku Le Noir", "whisky", 30, "Warsong");
+		yaku.extorquer(marco);
 	}
 }
