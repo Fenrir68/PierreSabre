@@ -3,7 +3,7 @@ package personnages;
 public class Humain {
 	private String name;
 	private String favDrink;
-	private int money;
+	protected int money;
 	
 
 	public Humain(String name, String favDrink, int money) {
@@ -20,7 +20,7 @@ public class Humain {
 		return money;
 	}
 	
-	private void parler(String message) {
+	protected void parler(String message) {
 		System.out.println(message);
 	}
 	
