@@ -2,6 +2,7 @@ package histoire;
 
 import personnages.Commercant;
 import personnages.Ronin;
+import personnages.Samourai;
 import personnages.Yakuza;
 
 public class HistoireTP5 {
@@ -9,7 +10,7 @@ public class HistoireTP5 {
 	public static void main(String[] args) {
 		HistoireTP5 h=new HistoireTP5();
 		
-		h.scenarion1();
+		h.scenarion2();
 	}
 	
 	public void scenarion1() {
@@ -26,5 +27,13 @@ public class HistoireTP5 {
 		marco.listerConnaissance();
 		roro.listerConnaissance();
 		yaku.listerConnaissance();
+	}
+	
+	public void scenarion2() {
+		Samourai akimoto= new Samourai("Akimoto", "saké", 512, "Miyamoto");
+		Commercant marco = new Commercant("Marco", 20);
+		akimoto.faireConnaissance(marco);
+		akimoto.listerConnaissance();
+		
 	}
 }
