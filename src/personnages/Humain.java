@@ -1,7 +1,7 @@
 package personnages;
 
 public class Humain {
-	protected static final int NB_CONNAISSANCE_MAX=3;
+	protected static final int NB_CONNAISSANCE_MAX=30;
 	private String nom;
 	private String favBoisson;
 	protected int argent;
@@ -60,15 +60,12 @@ public class Humain {
 	}
 	
 	private void memoriser(Humain autreHumain) {
-		int i=0;
-		while(i<NB_CONNAISSANCE_MAX && memoire[i]!=null) {
-			i++;
-		}
+		int i=getNbConnaissance();
 		if(i==NB_CONNAISSANCE_MAX) {
-			for(int k=NB_CONNAISSANCE_MAX-1; k>0; k--) {
-				memoire[k]=memoire[k-1];
+			for(int k=0; k<NB_CONNAISSANCE_MAX-1; k++) {
+				memoire[k]=memoire[k+1];
 			}
-			i=0;
+			i--;
 		}
 		memoire[i]=autreHumain;
 	}
@@ -81,15 +78,23 @@ public class Humain {
 	public void listerConnaissance() {
 		StringBuilder connaissanceStr = new StringBuilder();
 		int i=0;
-		while(i<NB_CONNAISSANCE_MAX && memoire[i]!=null) {
+		int nbConnaissance = getNbConnaissance();
+		while(i<nbConnaissance) {
 			connaissanceStr.append(memoire[i].getNom());
-			if(++i<NB_CONNAISSANCE_MAX && memoire[i]!=null) {
-				connaissanceStr.append(",");
+			if(++i<nbConnaissance) {
+				connaissanceStr.append(", ");
 			}
 		}
 		parler("Je connais beaucoup de monde dont : "+connaissanceStr.toString());
 	}
 	
+	public int getNbConnaissance() {
+		int i=0;
+		while(i<NB_CONNAISSANCE_MAX && memoire[i]!=null) {
+			i++;
+		}
+		return i;
+	}
 }
 
 
